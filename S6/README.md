@@ -21,3 +21,12 @@ The weights are now adjusted using weights = weights - learning_rate * partial d
 We repeat the steps from 1 to 6 till number of epochs are finished.
 
 
+Depending on the learning rate, the loss function graph can look very different.
+
+Learning rate = 0.1
+[![Screen-Shot-2023-06-10-at-1-41-11-am.png](https://i.postimg.cc/tTDPW74t/Screen-Shot-2023-06-10-at-1-41-11-am.png)](https://postimg.cc/gXXnPzRn)
+
+Learning rate = 2
+[![Screen-Shot-2023-06-10-at-1-43-39-am.png](https://i.postimg.cc/YCgW8dSS/Screen-Shot-2023-06-10-at-1-43-39-am.png)](https://postimg.cc/cvxCLMwq)
+
+
