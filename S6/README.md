@@ -2,7 +2,7 @@
 ## Understanding backpropogation in neural networks
 
 
-[![Screen-Shot-2023-06-10-at-1-34-28-am.png](https://i.postimg.cc/Vk6mKp69/Screen-Shot-2023-06-10-at-1-34-28-am.png)](https://postimg.cc/ZC1GRf60)
+[![Screen-Shot-2023-06-10-at-2-08-27-am.png](https://i.postimg.cc/BZHCT4bw/Screen-Shot-2023-06-10-at-2-08-27-am.png)](https://postimg.cc/hh4xgF99)
 
 
 Here we have a simple neural network with 1 hidden layer, 1 output layer and the input layer. In this network we have 2 input features and 2 output predictions. All explanations below is tailored to this network.
