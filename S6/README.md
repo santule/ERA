@@ -1,7 +1,8 @@
 # Session 6 Assignment
 ## Understanding backpropogation in neural networks
 
-[![image.png](https://i.postimg.cc/Vk6mKp69/Screen-Shot-2023-06-10-at-1-34-28-am.png)]
+
+[![Screen-Shot-2023-06-10-at-1-34-28-am.png](https://i.postimg.cc/Vk6mKp69/Screen-Shot-2023-06-10-at-1-34-28-am.png)](https://postimg.cc/ZC1GRf60)
 
 
 Here we have a simple neural network with 1 hidden layer, 1 output layer and the input layer. In this network we have 2 input features and 2 output predictions. All explanations below is tailored to this network.
@@ -18,3 +19,5 @@ The graident of the loss with respect to the weights can be calculated using the
 The weights are now adjusted using weights = weights - learning_rate * partial derivative of the loss wrt to the weight.
 ##### Step 6 - Rerun step 1 to 6 again till number of epochs are finished.
 We repeat the steps from 1 to 6 till number of epochs are finished.
+
+
