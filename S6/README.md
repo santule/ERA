@@ -2,7 +2,7 @@
 ## BACKPROPOGATION
 
 Understanding backpropogation in neural networks.
-[![image.png](https://postimg.cc/ZC1GRf60)
+[![image.png](https://i.postimg.cc/Vk6mKp69/Screen-Shot-2023-06-10-at-1-34-28-am.png)
 
 
 ## Forward Pass
