@@ -1,4 +1,4 @@
-# Session 5 Assignment
+# Session 6 Assignment
 ## MNIST CLASSIFICATION USING CONVOLUTIONAL NEURAL NETWORK
 
 Training convolutional neural network on MNIST data.
@@ -31,21 +31,35 @@ utils.summarise_model(mymodel)
 ----------------------------------------------------------------
         Layer (type)               Output Shape         Param #
 ================================================================
-            Conv2d-1           [-1, 32, 26, 26]             320
-            Conv2d-2           [-1, 64, 24, 24]          18,496
-            Conv2d-3          [-1, 128, 10, 10]          73,856
-            Conv2d-4            [-1, 256, 8, 8]         295,168
-            Linear-5                   [-1, 50]         204,850
-            Linear-6                   [-1, 10]             510
+            Conv2d-1           [-1, 16, 28, 28]             160
+              ReLU-2           [-1, 16, 28, 28]               0
+           Dropout-3           [-1, 16, 28, 28]               0
+       BatchNorm2d-4           [-1, 16, 28, 28]              32
+         MaxPool2d-5           [-1, 16, 14, 14]               0
+            Conv2d-6           [-1, 32, 14, 14]           4,640
+              ReLU-7           [-1, 32, 14, 14]               0
+           Dropout-8           [-1, 32, 14, 14]               0
+       BatchNorm2d-9           [-1, 32, 14, 14]              64
+        MaxPool2d-10             [-1, 32, 7, 7]               0
+           Conv2d-11             [-1, 32, 7, 7]           9,248
+             ReLU-12             [-1, 32, 7, 7]               0
+          Dropout-13             [-1, 32, 7, 7]               0
+      BatchNorm2d-14             [-1, 32, 7, 7]              64
+           Conv2d-15             [-1, 10, 7, 7]           2,890
+             ReLU-16             [-1, 10, 7, 7]               0
+          Dropout-17             [-1, 10, 7, 7]               0
+      BatchNorm2d-18             [-1, 10, 7, 7]              20
+        MaxPool2d-19             [-1, 10, 3, 3]               0
+        AvgPool2d-20             [-1, 10, 1, 1]               0
 ================================================================
-Total params: 593,200
-Trainable params: 593,200
+Total params: 17,118
+Trainable params: 17,118
 Non-trainable params: 0
 ----------------------------------------------------------------
 Input size (MB): 0.00
 Forward/backward pass size (MB): 0.67
-Params size (MB): 2.26
-Estimated Total Size (MB): 2.94
+Params size (MB): 0.07
+Estimated Total Size (MB): 0.74
 ----------------------------------------------------------------
 
 ```
