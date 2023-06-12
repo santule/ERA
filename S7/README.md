@@ -20,7 +20,7 @@
 2. From epoch 5 to 15, the model is there is consistent gap between training and testing accuracy.
 
 #### File:
-
+Session_7_Model1.ipynb
 
 
 ### MODEL 2 - the skeleton
