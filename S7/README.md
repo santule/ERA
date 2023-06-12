@@ -22,6 +22,7 @@
 #### File:
 Session_7_Model1.ipynb
 
+--------------------------------------------
 
 ### MODEL 2 - the skeleton
 
@@ -41,7 +42,7 @@ Session_7_Model1.ipynb
 
 #### File:
 
-
+--------------------------------------------
 
 ### MODEL 3 - the progressive
 
