@@ -52,9 +52,29 @@ Session_7_Model2.ipynb
 
 #### Results:
 1. Parameters: 32 k
+2. Best Training Accuracy: 99.89
+3. Best Test Accuracy: 99.3
+#### Analysis:
+1. Performance on both test and train improved.
+2. Still see some overfitting between train and test accuracy.
+3. Test accuracy is not consistent in performance.
+
+#### File:
+
+
+--------------------------------------------
+
+### MODEL 4 - the GAP
+
+#### Targets:
+1. Add gap layer in the output layer
+2. 
+
+#### Results:
+1. Parameters: 
 2. Best Training Accuracy: 
 3. Best Test Accuracy: 
 #### Analysis:
-1. very heavy model for a simple MNIST dataset.
+1. 
 
 #### File:
