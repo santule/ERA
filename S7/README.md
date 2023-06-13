@@ -32,8 +32,8 @@ Session_7_Model1.ipynb
 
 #### Results:
 1. Parameters: 9 K
-2. Best Training Accuracy: 99.19
-3. Best Test Accuracy: 98.89
+2. Best Training Accuracy: 99.2
+3. Best Test Accuracy: 98.9
 #### Analysis:
 1. Both training and testing performance has gone down as the model is very small.
 2. The gap between training and testing accuracy has reduced but started to get wider in the last 3-4 epochs, meaning the model is now overfitting the training data.
