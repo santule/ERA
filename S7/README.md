@@ -51,7 +51,7 @@ Session_7_Model2.ipynb
 2. Add regularisation - dropout
 
 #### Results:
-1. Parameters: 8 k
+1. Parameters: 9 k
 2. Best Training Accuracy: 99.43
 3. Best Test Accuracy: 99.0
 #### Analysis:
