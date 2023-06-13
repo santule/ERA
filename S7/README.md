@@ -31,7 +31,7 @@ Session_7_Model1.ipynb
 2. Making the model lighter
 
 #### Results:
-1. Parameters: 32 K
+1. Parameters: 9 K
 2. Best Training Accuracy: 99.19
 3. Best Test Accuracy: 98.89
 #### Analysis:
