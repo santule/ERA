@@ -60,7 +60,7 @@ Session_7_Model2.ipynb
 3. Test accuracy is not consistent in performance.
 
 #### File:
-
+Session_7_Model2.ipynb
 
 --------------------------------------------
 
