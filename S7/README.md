@@ -41,6 +41,7 @@ Session_7_Model1.ipynb
 1. very heavy model for a simple MNIST dataset.
 
 #### File:
+Session_7_Model2.ipynb
 
 --------------------------------------------
 
