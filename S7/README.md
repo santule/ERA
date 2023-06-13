@@ -51,16 +51,16 @@ Session_7_Model2.ipynb
 2. Add regularisation - dropout
 
 #### Results:
-1. Parameters: 32 k
-2. Best Training Accuracy: 99.89
-3. Best Test Accuracy: 99.3
+1. Parameters: 8 k
+2. Best Training Accuracy: 99.43
+3. Best Test Accuracy: 99.0
 #### Analysis:
 1. Performance on both test and train improved.
 2. Still see some overfitting between train and test accuracy.
 3. Test accuracy is not consistent in performance.
 
 #### File:
-Session_7_Model2.ipynb
+Session_7_Model3.ipynb
 
 --------------------------------------------
 
