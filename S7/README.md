@@ -64,17 +64,57 @@ Session_7_Model3.ipynb
 
 --------------------------------------------
 
-### MODEL 4 - the GAP
+### MODEL 4 - add the GAP
 
 #### Targets:
-1. Add gap layer in the output layer
-2. 
+1. Add gap layer in the output layer 
 
 #### Results:
-1. Parameters: 
+1. Parameters: 6.5K
+2. Best Training Accuracy: 98.8
+3. Best Test Accuracy: 98.5
+#### Analysis:
+1. Difference between training and test accuracy has decreased.
+2. Overall model performance has dropped.
+
+#### File:
+Session_7_Model4.ipynb
+
+--------------------------------------------
+
+### MODEL 5 - dropout after each layer, add layer after GAP.
+
+#### Targets:
+1. Add dropout after each convolutional layer.
+2. Add another convolutional layer after GAP.
+3. Get rid of the second transition block, and increase model capacity.
+
+#### Results:
+1. Parameters: 7.5k
 2. Best Training Accuracy: 
 3. Best Test Accuracy: 
 #### Analysis:
 1. 
 
 #### File:
+Session_7_Model5.ipynb
+
+--------------------------------------------
+
+
+### MODEL 6 - Add image augmentation and ReduceLRONPLATEAU
+#### Targets:
+1. Add image rotation.
+2. Add ReduceLRONPLATEAU for dynamic adjustment of learning rate.
+
+#### Results:
+1. Parameters: 7.5k
+2. Best Training Accuracy: 
+3. Best Test Accuracy: 99.4
+#### Analysis:
+1. 
+
+#### File:
+Session_7_Model6.ipynb
+
+Session_7_Model4.ipynb
