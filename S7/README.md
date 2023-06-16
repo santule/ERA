@@ -94,7 +94,7 @@ Session_7_Model4.ipynb
 2. Best Training Accuracy: 
 3. Best Test Accuracy: 
 #### Analysis:
-1. 
+1. Model reaches good accuracy of 99.2 and it is stable in the last few epochs.
 
 #### File:
 Session_7_Model5.ipynb
@@ -102,19 +102,22 @@ Session_7_Model5.ipynb
 --------------------------------------------
 
 
-### MODEL 6 - Add image augmentation and ReduceLRONPLATEAU
+### MODEL 6 - Add image augmentation and StepLR
 #### Targets:
-1. Add image rotation.
-2. Add ReduceLRONPLATEAU for dynamic adjustment of learning rate.
+1. Add image rotation, jitter and affine.
+2. Add StepLR to adjust learning rate after half epochs of total epochs are done.
+3. Include bias as False.
 
 #### Results:
-1. Parameters: 7.5k
+1. Parameters: 7416
 2. Best Training Accuracy: 
 3. Best Test Accuracy: 99.4
 #### Analysis:
-1. 
+1. After epoch 8, there is bump in the accuracy. This concides with the LR adjusted through stepLR.
+2. The model shows consistent performance of 99.4 in last 5 epochs.
 
 #### File:
 Session_7_Model6.ipynb
 
-Session_7_Model4.ipynb
+Model plots:
+[![Screen-Shot-2023-06-16-at-11-10-08-pm.png](https://i.postimg.cc/j2hMcZpb/Screen-Shot-2023-06-16-at-11-10-08-pm.png)](https://postimg.cc/JHG34c76)
