@@ -23,7 +23,7 @@ for epoch in range(EPOCHS):
 
 
 ##### 1.3 - 10 misclassified examples
-[![bn-mis.png](https://i.postimg.cc/KYZv9ybM/bn-mis.png)](https://postimg.cc/WdHv3ChN)
+[![bn-mis.png](https://i.postimg.cc/1XSCkPmp/bn-mis.png)](https://postimg.cc/34LFGsDR)
 
 
 ### 2 - Layer Normalisation
@@ -41,7 +41,7 @@ for epoch in range(EPOCHS):
 [![ln-graph.png](https://i.postimg.cc/1zCnwzFt/ln-graph.png)](https://postimg.cc/yJR8zsv4)
 
 ##### 2.3 - 10 misclassified examples
-[![ln-mis.png](https://i.postimg.cc/LsXh9MWM/ln-mis.png)](https://postimg.cc/9D6cbsVx)
+[![ln-mis.png](https://i.postimg.cc/P5C4FNWg/ln-mis.png)](https://postimg.cc/DSKLSvY6)
 
 ### 3 - Group Normalisation
 
@@ -58,4 +58,4 @@ for epoch in range(EPOCHS):
 [![gn-graph.png](https://i.postimg.cc/PJzdb674/gn-graph.png)](https://postimg.cc/64qstht2)
 
 ##### 3.3 - 10 misclassified examples
-[![gn-mis.png](https://i.postimg.cc/gjDPLxwt/gn-mis.png)](https://postimg.cc/bSs5KN91)
+[![gn-mis.png](https://i.postimg.cc/fygdxjrJ/gn-mis.png)](https://postimg.cc/zHK3NW5r)
