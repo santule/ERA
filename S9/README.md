@@ -19,6 +19,7 @@ train_loader,test_loader = dataloader.load_dataset()
 model_check = model.Net().to(device)
 utils.summarise_model(model_check)
 ```
+[![Screen-Shot-2023-06-30-at-8-54-14-pm.png](https://i.postimg.cc/1t368xCY/Screen-Shot-2023-06-30-at-8-54-14-pm.png)](https://postimg.cc/8FxsYYVh)
 
 ### 3 - Train the model
 
@@ -49,3 +50,4 @@ for epoch in range(EPOCHS):
 ```sh
 utils.plot_losses(train_losses,train_acc_list,test_losses,test_acc_list)
 ```
+[![Screen-Shot-2023-06-30-at-8-54-25-pm.png](https://i.postimg.cc/8zdrwkx0/Screen-Shot-2023-06-30-at-8-54-25-pm.png)](https://postimg.cc/HrxxkmYw)
