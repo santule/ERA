@@ -51,8 +51,3 @@ for epoch in range(EPOCHS):
     utils.train(model_check, device, train_loader, optimizer, epoch,criterion,scheduler)
     utils.test(model_check, device, test_loader,criterion)
 ```
-
-### 4 - Plot graph
-```sh
-utils.plot_losses(train_losses,train_acc_list,test_losses,test_acc_list)
-```
