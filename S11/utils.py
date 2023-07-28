@@ -163,3 +163,36 @@ def imshow(img):
     npimg = img.numpy()
     plt.imshow(np.transpose(npimg, (1, 2, 0)))
     plt.show()
+
+
+def misclassified_images(num_misclassified,model_bn,test_loader):
+
+    misclassified_examples = []
+    misclassified_labels = []
+    correct_labels = []
+
+    model_bn.eval()
+    with torch.no_grad():
+      for data, target in test_loader:
+          data, target = data.to(device), target.to(device)
+          output = model_bn(data)
+          pred = output.argmax(dim=1, keepdim=True)
+
+          ids_mask = ((pred == target.view_as(pred)) ==False).view(-1)
+          misclassified_examples.append(data[ids_mask].squeeze().cpu().numpy())
+          misclassified_labels.append(target[ids_mask].squeeze().cpu().numpy())
+          correct_labels.append(pred[ids_mask].squeeze().cpu().numpy())
+
+          if len(misclassified_examples[0]) >= num_misclassified:
+            break
+
+    fig = plt.figure(figsize=(20,8))
+    for idx in np.arange(num_misclassified):
+      ax = fig.add_subplot(2,5,idx + 1,xticks=[],yticks=[])
+      img = misclassified_examples[0][idx]
+      img = img/2 + 0.5
+      img = np.clip(img,0,1)
+      plt.imshow(img.T)
+      ax.set_title(f"Correct/Predicted: {misclassified_labels[0][idx]} / {correct_labels[0][idx]}")
+
+    plt.show()
