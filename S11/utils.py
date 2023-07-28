@@ -108,13 +108,12 @@ def train(model, device, train_loader, optimizer, epoch,criterion,scheduler):
     processed += len(data)
 
     scheduler.step()
-    pbar.set_description(desc= f'Loss={loss.item()} Batch_id={batch_idx} Accuracy={100*correct/processed:0.2f}')
+    pbar.set_description(desc= f'Loss={loss.item()} Batch_id={batch_idx} Accuracy={100 * correct/processed:0.2f}')
 
-
-  train_loss = train_loss/len(train_loader)
+  train_loss = train_loss / processed
   train_acc = 100 * correct / processed
 
-  print('Training set set: Average loss: {:.4f}, Accuracy: {}/{} ({:.2f}%)\n'.format(
+  print('\nTraining set set: Average loss: {:.4f}, Accuracy: {}/{} ({:.2f}%)\n'.format(
         train_loss, correct, len(train_loader),train_acc))
 
   return train_loss, train_acc
@@ -123,7 +122,6 @@ def train(model, device, train_loader, optimizer, epoch,criterion,scheduler):
 
 def test(model, device, test_loader,criterion):
     model.eval()
-
     test_loss = 0
     correct   = 0
     with torch.no_grad():
