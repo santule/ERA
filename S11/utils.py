@@ -5,11 +5,17 @@ import torch.nn.functional as F
 import torch.optim as optim
 from torchvision import datasets, transforms
 from torchsummary import summary
-from tqdm import tqdm
+from tqdm.autonotebook import tqdm
 import numpy as np
 import albumentations as A
 from albumentations.pytorch import ToTensorV2
 import matplotlib.pyplot as plt
+from pytorch_grad_cam import GradCAM
+from pytorch_grad_cam.utils.image import show_cam_on_image,scale_cam_image
+from pytorch_grad_cam.utils.model_targets import ClassifierOutputTarget
+import cv2
+from PIL import Image
+
 
 train_losses = []
 test_losses = []
@@ -165,7 +171,7 @@ def imshow(img):
     plt.show()
 
 
-def misclassified_images(num_misclassified,model_bn,test_loader):
+def misclassified_images(num_misclassified,model_bn,test_loader,device):
 
     misclassified_examples = []
     misclassified_labels = []
@@ -196,3 +202,28 @@ def misclassified_images(num_misclassified,model_bn,test_loader):
       ax.set_title(f"Correct/Predicted: {misclassified_labels[0][idx]} / {correct_labels[0][idx]}")
 
     plt.show()
+
+def grad_cam_images(model,test_loader,class_to_see,max_images):
+
+  target_layer = [model.layer3[-1]]
+  input_tensor = test_loader
+  test_images = [x[0] for x in test_loader.dataset]
+  test_images = torch.stack(test_images[:max_images]).to(device) # test images to apply grad cam on
+  model.eval() # model in eval
+  cam = GradCAM(model= model, target_layers=target_layer, use_cuda=device) # cam
+  target_class = [ClassifierOutputTarget(class_to_see)] # which class to see
+  grayscale_cam = cam(input_tensor=test_images, targets=target_class) # grayscale activation
+
+  class_cam = []
+  for i in range(grayscale_cam.shape[0]):
+    grayscale_cam_img = grayscale_cam[i,:]
+    rgb_test_img = test_images[i,: ].cpu().numpy()
+    rgb_test_img = rgb_test_img.reshape(32,32,3)
+    rgb_test_img = np.float32(rgb_test_img) / 255
+    cam_image = show_cam_on_image(rgb_test_img, grayscale_cam_img, use_rgb = True)
+    cam = np.uint8(255 * grayscale_cam_img)
+    cam = cv2.merge([cam, cam, cam])
+    class_cam.append(cam_image)
+
+  images = np.hstack(class_cam)
+  return images
