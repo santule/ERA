@@ -78,10 +78,13 @@ def load_dataset():
     return train_loader,test_loader
 
 def train(model, device, train_loader, optimizer, epoch,criterion,scheduler):
+
   model.train()
   pbar = tqdm(train_loader)
-  correct = 0
-  processed = 0
+  correct    = 0
+  processed  = 0
+  train_loss = 0
+
   for batch_idx, (data, target) in enumerate(pbar):
     # get samples
     data, target = data.to(device), target.to(device)
@@ -93,7 +96,7 @@ def train(model, device, train_loader, optimizer, epoch,criterion,scheduler):
 
     # Calculate loss
     loss = criterion(y_pred, target)
-    train_losses.append(loss)
+    train_loss += loss.item()
 
     # Backpropagation
     loss.backward()
@@ -106,13 +109,23 @@ def train(model, device, train_loader, optimizer, epoch,criterion,scheduler):
 
     scheduler.step()
     pbar.set_description(desc= f'Loss={loss.item()} Batch_id={batch_idx} Accuracy={100*correct/processed:0.2f}')
-    train_acc.append(100*correct/processed)
+
+
+  train_loss = train_loss/len(train_loader)
+  train_acc = 100 * correct / processed
+
+  print('Training set set: Average loss: {:.4f}, Accuracy: {}/{} ({:.2f}%)\n'.format(
+        train_loss, correct, len(train_loader),train_acc))
+
+  return train_loss, train_acc
+
 
 
 def test(model, device, test_loader,criterion):
     model.eval()
+
     test_loss = 0
-    correct = 0
+    correct   = 0
     with torch.no_grad():
         for data, target in test_loader:
             data, target = data.to(device), target.to(device)
@@ -122,13 +135,12 @@ def test(model, device, test_loader,criterion):
             correct += pred.eq(target.view_as(pred)).sum().item()
 
     test_loss /= len(test_loader.dataset)
-    test_losses.append(test_loss)
+    test_acc = 100 * correct / len(test_loader)
 
     print('\nTest set: Average loss: {:.4f}, Accuracy: {}/{} ({:.2f}%)\n'.format(
-        test_loss, correct, len(test_loader.dataset),
-        100. * correct / len(test_loader.dataset)))
+        test_loss, correct, len(test_loader),test_acc)
 
-    test_acc.append(100. * correct / len(test_loader.dataset))
+    return test_loss, test_acc
 
 
 def summarise_model(m):
