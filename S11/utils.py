@@ -1,121 +1,156 @@
-'''Some helper functions for PyTorch, including:
-    - get_mean_and_std: calculate the mean and std value of dataset.
-    - msr_init: net parameter initialization.
-    - progress_bar: progress bar mimic xlua.progress.
-'''
-import os
-import sys
-import time
-import math
-
+import torch
+import matplotlib.pyplot as plt
 import torch.nn as nn
-import torch.nn.init as init
+import torch.nn.functional as F
+import torch.optim as optim
+from torchvision import datasets, transforms
+from torchsummary import summary
+from tqdm import tqdm
+import numpy as np
+import albumentations as A
+from albumentations.pytorch import ToTensorV2
+import matplotlib.pyplot as plt
+
+train_losses = []
+test_losses = []
+train_acc = []
+test_acc = []
+means = [0.4914, 0.4822, 0.4465]
+stds  = [0.2470, 0.2435, 0.2616]
 
 
-def get_mean_and_std(dataset):
-    '''Compute the mean and std value of dataset.'''
-    dataloader = torch.utils.data.DataLoader(dataset, batch_size=1, shuffle=True, num_workers=2)
-    mean = torch.zeros(3)
-    std = torch.zeros(3)
-    print('==> Computing mean and std..')
-    for inputs, targets in dataloader:
-        for i in range(3):
-            mean[i] += inputs[:,i,:,:].mean()
-            std[i] += inputs[:,i,:,:].std()
-    mean.div_(len(dataset))
-    std.div_(len(dataset))
-    return mean, std
+# Train Phase transformations
+train_transforms = A.Compose(
+    [
+        A.Normalize(mean=means, std=stds, always_apply=True),
+        A.PadIfNeeded(min_height=36, min_width=36, always_apply=True),
+        A.RandomCrop(height=32, width=32, always_apply=True),
+        A.HorizontalFlip(),
+        A.CoarseDropout(max_holes=1, max_height=8, max_width=8, min_holes=1, min_height=8, min_width=8, fill_value=means),
+        ToTensorV2(),
+    ]
+)
 
-def init_params(net):
-    '''Init layer parameters.'''
-    for m in net.modules():
-        if isinstance(m, nn.Conv2d):
-            init.kaiming_normal(m.weight, mode='fan_out')
-            if m.bias:
-                init.constant(m.bias, 0)
-        elif isinstance(m, nn.BatchNorm2d):
-            init.constant(m.weight, 1)
-            init.constant(m.bias, 0)
-        elif isinstance(m, nn.Linear):
-            init.normal(m.weight, std=1e-3)
-            if m.bias:
-                init.constant(m.bias, 0)
+test_transforms = A.Compose(
+    [
+        A.Normalize(mean=means, std=stds, always_apply=True),
+        ToTensorV2(),
+    ]
+)
+
+# dataset for CIFAR10 dataset
+class CIFAR10Dataset(datasets.CIFAR10):
+
+ def __init__(self,root="./data",train=True,download=True,transform=None):
+   super().__init__(root=root,train=train,download=download,transform=transform)
+
+ def __getitem__(self,index):
+   image, label = self.data[index], self.targets[index]
+
+   if self.transform is not None:
+     transformed = self.transform(image=image)
+     image = transformed["image"]
+   return image,label
 
 
+def load_dataset():
+    SEED = 1
+    cuda = torch.cuda.is_available()
+    print("CUDA Available?", cuda)
 
-def progress_bar(current, total, msg=None):
-    TOTAL_BAR_LENGTH = 65.
-    last_time = 0
-    begin_time = 0
-    if current == 0:
-        begin_time = time.time()  # Reset for new bar.
+    # For reproducibility
+    torch.manual_seed(SEED)
 
-    cur_len = int(TOTAL_BAR_LENGTH * current / total)
-    rest_len = int(TOTAL_BAR_LENGTH - cur_len) - 1
+    if cuda:
+     torch.cuda.manual_seed(SEED)
 
-    sys.stdout.write(' [')
-    for i in range(cur_len):
-        sys.stdout.write('=')
-    sys.stdout.write('>')
-    for i in range(rest_len):
-        sys.stdout.write('.')
-    sys.stdout.write(']')
+    # dataloader arguments
+    dataloader_args = dict(shuffle=True, batch_size=512, num_workers=2, pin_memory=True) if cuda else dict(shuffle=True, batch_size=64)
 
-    cur_time  = time.time()
-    step_time = cur_time - last_time
-    last_time = cur_time
-    tot_time  = cur_time - begin_time
+    # train dataloader
+    train = CIFAR10Dataset(transform = train_transforms)
+    train_loader = torch.utils.data.DataLoader(train, **dataloader_args)
 
-    L = []
-    L.append('  Step: %s' % format_time(step_time))
-    L.append(' | Tot: %s' % format_time(tot_time))
-    if msg:
-        L.append(' | ' + msg)
+    # test dataloader
+    test = CIFAR10Dataset(transform = test_transforms,train=False)
+    test_loader = torch.utils.data.DataLoader(test, **dataloader_args)
 
-    msg = ''.join(L)
-    sys.stdout.write(msg)
-    for i in range(term_width-int(TOTAL_BAR_LENGTH)-len(msg)-3):
-        sys.stdout.write(' ')
+    return train_loader,test_loader
 
-    # Go back to the center of the bar.
-    for i in range(term_width-int(TOTAL_BAR_LENGTH/2)+2):
-        sys.stdout.write('\b')
-    sys.stdout.write(' %d/%d ' % (current+1, total))
+def train(model, device, train_loader, optimizer, epoch,criterion,scheduler):
+  model.train()
+  pbar = tqdm(train_loader)
+  correct = 0
+  processed = 0
+  for batch_idx, (data, target) in enumerate(pbar):
+    # get samples
+    data, target = data.to(device), target.to(device)
+    # Init
+    optimizer.zero_grad()
 
-    if current < total-1:
-        sys.stdout.write('\r')
-    else:
-        sys.stdout.write('\n')
-    sys.stdout.flush()
+    # Predict
+    y_pred = model(data)
 
-def format_time(seconds):
-    days = int(seconds / 3600/24)
-    seconds = seconds - days*3600*24
-    hours = int(seconds / 3600)
-    seconds = seconds - hours*3600
-    minutes = int(seconds / 60)
-    seconds = seconds - minutes*60
-    secondsf = int(seconds)
-    seconds = seconds - secondsf
-    millis = int(seconds*1000)
+    # Calculate loss
+    loss = criterion(y_pred, target)
+    train_losses.append(loss)
 
-    f = ''
-    i = 1
-    if days > 0:
-        f += str(days) + 'D'
-        i += 1
-    if hours > 0 and i <= 2:
-        f += str(hours) + 'h'
-        i += 1
-    if minutes > 0 and i <= 2:
-        f += str(minutes) + 'm'
-        i += 1
-    if secondsf > 0 and i <= 2:
-        f += str(secondsf) + 's'
-        i += 1
-    if millis > 0 and i <= 2:
-        f += str(millis) + 'ms'
-        i += 1
-    if f == '':
-        f = '0ms'
-    return f
+    # Backpropagation
+    loss.backward()
+    optimizer.step()
+
+    # Update pbar-tqdm
+    pred = y_pred.argmax(dim=1, keepdim=True)  # get the index of the max log-probability
+    correct += pred.eq(target.view_as(pred)).sum().item()
+    processed += len(data)
+
+    scheduler.step()
+    pbar.set_description(desc= f'Loss={loss.item()} Batch_id={batch_idx} Accuracy={100*correct/processed:0.2f}')
+    train_acc.append(100*correct/processed)
+
+
+def test(model, device, test_loader,criterion):
+    model.eval()
+    test_loss = 0
+    correct = 0
+    with torch.no_grad():
+        for data, target in test_loader:
+            data, target = data.to(device), target.to(device)
+            output = model(data)
+            test_loss += criterion(output, target).item()  # sum up batch loss
+            pred = output.argmax(dim=1, keepdim=True)  # get the index of the max log-probability
+            correct += pred.eq(target.view_as(pred)).sum().item()
+
+    test_loss /= len(test_loader.dataset)
+    test_losses.append(test_loss)
+
+    print('\nTest set: Average loss: {:.4f}, Accuracy: {}/{} ({:.2f}%)\n'.format(
+        test_loss, correct, len(test_loader.dataset),
+        100. * correct / len(test_loader.dataset)))
+
+    test_acc.append(100. * correct / len(test_loader.dataset))
+
+
+def summarise_model(m):
+    use_cuda = torch.cuda.is_available()
+    device = torch.device("cuda" if use_cuda else "cpu")
+    model = m.to(device)
+    summary(model, input_size=(3,32,32))
+
+def plot_losses(train_losses,train_acc,test_losses,test_acc):
+    fig, axs = plt.subplots(2,2,figsize=(15,10))
+    axs[0, 0].plot(train_losses)
+    axs[0, 0].set_title("Training Loss")
+    axs[1, 0].plot(train_acc)
+    axs[1, 0].set_title("Training Accuracy")
+    axs[0, 1].plot(test_losses)
+    axs[0, 1].set_title("Test Loss")
+    axs[1, 1].plot(test_acc)
+    axs[1, 1].set_title("Test Accuracy")
+
+# functions to show an image
+def imshow(img):
+    img = img / 2 + 0.5     # unnormalize
+    npimg = img.numpy()
+    plt.imshow(np.transpose(npimg, (1, 2, 0)))
+    plt.show()
