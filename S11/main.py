@@ -22,7 +22,7 @@ from PIL import Image
 
 
 
-EPOCHS = 1
+EPOCHS = 20
 
 cuda = torch.cuda.is_available()
 device = torch.device("cuda" if cuda else "cpu")
@@ -69,5 +69,4 @@ print(f"----------Misclassified Images----------")
 utils.misclassified_images(10,model_check,test_loader,device)
 
 print(f"----------Grad Cam on Images----------")
-images_cam = utils.grad_cam_images(model_check,test_loader,9,10)
-Image.fromarray(images_cam)
+utils.grad_cam_images(model_check,test_loader,device,9,10)

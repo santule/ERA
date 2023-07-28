@@ -203,7 +203,7 @@ def misclassified_images(num_misclassified,model_bn,test_loader,device):
 
     plt.show()
 
-def grad_cam_images(model,test_loader,class_to_see,max_images):
+def grad_cam_images(model,test_loader,device,class_to_see,max_images):
 
   target_layer = [model.layer3[-1]]
   input_tensor = test_loader
@@ -225,5 +225,8 @@ def grad_cam_images(model,test_loader,class_to_see,max_images):
     cam = cv2.merge([cam, cam, cam])
     class_cam.append(cam_image)
 
-  images = np.hstack(class_cam)
-  return images
+  images_stack = np.hstack(class_cam)
+  #print(images_stack.shape)
+  #Image.fromarray(images_stack
+  plt.imshow(images_stack)
+  plt.show()
