@@ -3,12 +3,6 @@
 
 In this repo, we train custom resent convolutional neural network on CIFAR10 dataset using pytorch lightning.
 
-Folder structure
-models - Contains models including resnet.py
-utils.py - Helper functions
-main.py - Main script file to run
-For end-to-end training and visualization of gradcam
-
 
 Running from Terminal
 ```sh
@@ -19,7 +13,9 @@ Running from google colab
 ```sh
 % run main.py
 ```
+
 Training and Testing Loss curve
-<img width="1265" alt="Screenshot 2023-07-29 at 1 32 54 am" src="https://github.com/santule/ERA/assets/20509836/365f3417-5580-47ed-b986-1a7aabd3eb1e">
+[![Screenshot-2023-08-05-at-3-59-51-pm.png](https://i.postimg.cc/PJ1NHkQx/Screenshot-2023-08-05-at-3-59-51-pm.png)](https://postimg.cc/RJVv1y85)
 
-
+Misclassified Images
+[![Screenshot-2023-08-05-at-4-00-05-pm.png](https://i.postimg.cc/J4bBVjpq/Screenshot-2023-08-05-at-4-00-05-pm.png)](https://postimg.cc/Tp3Pn5ML)
