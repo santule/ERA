@@ -1,5 +1,8 @@
-import utils as utils
+#import utils as utils
+import ERA.S12.utils as utils
+import ERA.S12.models as models
 from models import custom_resnet
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
