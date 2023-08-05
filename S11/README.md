@@ -16,9 +16,16 @@ python main.py
 ```
 
 Running from google colab
+
 ```sh
 % run main.py
 ```
-Training and Testing Loss curve
-<img width="1265" alt="Screenshot 2023-07-29 at 1 32 54 am" src="https://github.com/santule/ERA/assets/20509836/365f3417-5580-47ed-b986-1a7aabd3eb1e">
 
+Training and Testing Loss curve
+
+
+
+
+
+
+Misclassified Images
