@@ -14,6 +14,7 @@ from pytorch_grad_cam import GradCAM
 from pytorch_grad_cam.utils.image import show_cam_on_image,scale_cam_image
 from pytorch_grad_cam.utils.model_targets import ClassifierOutputTarget
 import math
+from torch_lr_finder import LRFinder
 
 train_losses = []
 test_losses  = []
@@ -58,6 +59,22 @@ class CIFAR10Dataset(datasets.CIFAR10):
      image = transformed["image"]
    return image,label
 
+# max lr
+def find_max_lr(model_check,train_loader):
+    # Optimization algorithm to update the weights
+    LEARNING_RATE = 0.03
+    WEIGHT_DECAY = 1e-4
+    optimizer = optim.SGD(model_check.parameters(), lr=LEARNING_RATE, momentum=0.9, weight_decay=WEIGHT_DECAY)
+
+    # Loss Function
+    criterion = nn.CrossEntropyLoss()
+    # LR finder
+    lr_finder = LRFinder(model_check, optimizer, criterion, device='cuda')
+    lr_finder.range_test(train_loader, end_lr=10, num_iter=200, step_mode="exp")
+    max_lr = lr_finder.plot(suggest_lr=True, skip_start=0, skip_end=0)
+    lr_finder.reset()
+
+    return(max_lr[1])
 
 # load the dataset in the dataloader
 def load_dataset():
