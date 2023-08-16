@@ -9,11 +9,8 @@ Training and Testing Loss curve
 
 
 
-Gradio App
-
-
-
-
+Gradio App on hugging face
+https://huggingface.co/spaces/sanjanatule/ERA_Assignment13
 
 
 Gradcam on Model outputs
