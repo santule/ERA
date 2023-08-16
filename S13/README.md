@@ -10,6 +10,7 @@ Training and Testing Loss curve
 
 
 Gradio App on hugging face
+
 https://huggingface.co/spaces/sanjanatule/ERA_Assignment13
 
 
