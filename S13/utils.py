@@ -476,19 +476,19 @@ def load_checkpoint(checkpoint_file, model, optimizer, lr):
 def get_loaders(train_csv_path, test_csv_path):
     from dataset import YOLODataset
 
-    #IMAGE_SIZE = config.IMAGE_SIZE
+    IMAGE_SIZE = config.IMAGE_SIZE
     train_dataset = YOLODataset(
         train_csv_path,
-        transform=config.custom_train_transform,
-        #S=[IMAGE_SIZE // 32, IMAGE_SIZE // 16, IMAGE_SIZE // 8],
+        transform=config.train_transforms,
+        S=[IMAGE_SIZE // 32, IMAGE_SIZE // 16, IMAGE_SIZE // 8],
         img_dir=config.IMG_DIR,
         label_dir=config.LABEL_DIR,
         anchors=config.ANCHORS,
     )
     test_dataset = YOLODataset(
         test_csv_path,
-        transform=config.custom_test_transform,
-        #S=[IMAGE_SIZE // 32, IMAGE_SIZE // 16, IMAGE_SIZE // 8],
+        transform=config.test_transforms,
+        S=[IMAGE_SIZE // 32, IMAGE_SIZE // 16, IMAGE_SIZE // 8],
         img_dir=config.IMG_DIR,
         label_dir=config.LABEL_DIR,
         anchors=config.ANCHORS,
@@ -512,8 +512,8 @@ def get_loaders(train_csv_path, test_csv_path):
 
     train_eval_dataset = YOLODataset(
         train_csv_path,
-        transform=config.custom_test_transform,
-        #S=[IMAGE_SIZE // 32, IMAGE_SIZE // 16, IMAGE_SIZE // 8],
+        transform=config.test_transforms,
+        S=[IMAGE_SIZE // 32, IMAGE_SIZE // 16, IMAGE_SIZE // 8],
         img_dir=config.IMG_DIR,
         label_dir=config.LABEL_DIR,
         anchors=config.ANCHORS,
@@ -527,7 +527,7 @@ def get_loaders(train_csv_path, test_csv_path):
         drop_last=False,
     )
 
-    return train_dataset,test_dataset, train_eval_dataset,train_loader, test_loader, train_eval_loader
+    return train_loader, test_loader, train_eval_loader
 
 def plot_couple_examples(model, loader, thresh, iou_thresh, anchors):
     model.eval()
