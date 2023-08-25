@@ -12,8 +12,7 @@ We use LR Finder to find max LR for One cycle policy.
 
 Training and Testing Loss curve
 
-<img width="619" alt="Screenshot 2023-08-22 at 9 34 23 pm" src="https://github.com/santule/ERA/assets/20509836/0af2d8bb-aba4-4227-a7d8-37e571e3031c">
-
+<img src="https://github.com/santule/ERA/assets/20509836/98ddba25-22a0-4f26-8c51-36116bb571c6 width=200 height=200>">
 
 Gradio App on hugging face
 
