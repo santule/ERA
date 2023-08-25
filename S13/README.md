@@ -7,12 +7,13 @@ In this repo, we train Yolo3 model on PASCAL_VOC dataset using pytorch lightning
 
 We use LR Finder to find max LR for One cycle policy.
 
-<img src="https://github.com/santule/ERA/assets/20509836/cffdcd1d-17bb-4f0e-a255-d439ecb11a93" width=200 height=200>
+<img src="https://github.com/santule/ERA/assets/20509836/cffdcd1d-17bb-4f0e-a255-d439ecb11a93" width=400 height=300>
 
 
 Training and Testing Loss curve
 
-<img src="https://github.com/santule/ERA/assets/20509836/98ddba25-22a0-4f26-8c51-36116bb571c6 width=200 height=200>">
+<img src="https://github.com/santule/ERA/assets/20509836/98ddba25-22a0-4f26-8c51-36116bb571c6" width=400 height=300>
+
 
 Gradio App on hugging face
 
