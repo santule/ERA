@@ -9,7 +9,7 @@ DATASET = 'PASCAL_VOC'
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 # seed_everything()  # If you want deterministic behavior
 NUM_WORKERS = 2
-BATCH_SIZE = 16
+BATCH_SIZE = 32
 IMAGE_SIZE = 416
 NUM_CLASSES = 20
 LEARNING_RATE = 1e-5

@@ -106,12 +106,7 @@ class YOLODataset(Dataset):
 
         if np.random.random() <= 0.75: # load mosaic only 75% of the time
             image, bboxes = self.load_mosaic(index)
-
-            if self.transform:
-                augmentations = self.transform(image=image, bboxes=bboxes)
-                image = augmentations["image"]
-                bboxes = augmentations["bboxes"]
-
+        
         else:
 
             label_path = os.path.join(self.label_dir, self.annotations.iloc[index, 1])
@@ -119,10 +114,10 @@ class YOLODataset(Dataset):
             img_path = os.path.join(self.img_dir, self.annotations.iloc[index, 0])
             image = np.array(Image.open(img_path).convert("RGB"))
 
-            if self.transform:
-                augmentations = self.transform(image=image, bboxes=bboxes)
-                image = augmentations["image"]
-                bboxes = augmentations["bboxes"]
+        if self.transform:
+            augmentations = self.transform(image=image, bboxes=bboxes)
+            image = augmentations["image"]
+            bboxes = augmentations["bboxes"]
 
         # Below assumes 3 scale predictions (as paper) and same num of anchors per scale
         targets = [torch.zeros((self.num_anchors // 3, S, S, 6)) for S in self.S]
