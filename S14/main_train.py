@@ -160,7 +160,7 @@ class LitTr(pl.LightningModule):
 trainer = pl.Trainer(log_every_n_steps=1,
                      limit_val_batches=2,
                      check_val_every_n_epoch=1,
-                     max_epochs=20, 
+                     max_epochs=10, 
                      accelerator='auto',
                      devices='auto',
                      strategy='auto',
@@ -172,7 +172,7 @@ def main():
     # config
     cfg = get_config()
     cfg['preload']=None
-    cfg['num_epochs'] = 20
+    cfg['num_epochs'] = 10
     cfg['batch_size'] = 16
 
     #### Loading Datasets
