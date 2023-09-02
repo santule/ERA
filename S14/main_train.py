@@ -172,7 +172,7 @@ def main():
     # config
     cfg = get_config()
     cfg['preload']=None
-    cfg['num_epochs'] = 10
+    cfg['num_epochs'] = 20
     cfg['batch_size'] = 16
 
     #### Loading Datasets
