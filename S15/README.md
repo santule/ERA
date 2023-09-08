@@ -2,7 +2,7 @@
 # Speeding up transformers training using pytorch lightning.
 
 
-In this repo, we speed up training transformers on the english to french translation by:
+In this repo, we speed up training transformers on the english to french translation and achieve train loss of < 1.8 by:
 
 1. Parameter Sharing.
 2. One Cycle Policy. (Model trained for 40 epochs only).
