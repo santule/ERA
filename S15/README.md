@@ -13,7 +13,8 @@ In this repo, we speed up training transformers on the english to french transla
 
 Training logs
 
-![Screenshot 2023-09-07 at 8 17 37 pm](https://github.com/santule/ERA/assets/20509836/4b6be454-a3de-4a3d-b290-991dace7c269)
+![Screenshot 2023-09-08 at 4 14 01 pm](https://github.com/santule/ERA/assets/20509836/f11e7c11-a050-466e-aa76-7bc0832fdabe)
+
  
 ![Screenshot 2023-09-07 at 8 25 12 pm](https://github.com/santule/ERA/assets/20509836/9bb4f104-d157-42fa-b7e3-2c975d541334)
 
