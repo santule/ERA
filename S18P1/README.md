@@ -32,7 +32,7 @@ my_unet = Unet(in_channels=3, out_channels=3,StrConv=True,ConvTr=True).to(device
 train_unet(EPOCHS,my_unet,ce_loss_fn,device,train_dataloader,test_dataloader)
 
 ```
-![Screenshot 2023-09-20 at 11 23 36 pm](https://github.com/santule/ERA/assets/20509836/b2a37cf1-acb7-4e6b-b013-3b3c737c3fa3)
+
 
 STRATEGY 4 -  Strided Convolutions(Contracting) + Bilinear UpSampling(Expanding) + Dice Loss
 
@@ -41,4 +41,9 @@ my_unet = Unet(in_channels=3, out_channels=3,StrConv=True,ConvTr=False).to(devic
 train_unet(EPOCHS,my_unet,dice_loss_fn,device,train_dataloader,test_dataloader)
 
 ```
+![Screenshot 2023-09-20 at 11 38 18 pm](https://github.com/santule/ERA/assets/20509836/e7f0ea93-ce8e-4a7c-a2ae-e34a2f28707c)
 
+Predictions of the model
+
+
+![Screenshot 2023-09-20 at 11 56 56 pm](https://github.com/santule/ERA/assets/20509836/63217045-fa47-4856-8979-0c46f4120432)
