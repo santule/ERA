@@ -32,7 +32,7 @@ my_unet = Unet(in_channels=3, out_channels=3,StrConv=True,ConvTr=True).to(device
 train_unet(EPOCHS,my_unet,ce_loss_fn,device,train_dataloader,test_dataloader)
 
 ```
-
+![Screenshot 2023-09-21 at 12 09 31 am](https://github.com/santule/ERA/assets/20509836/5e078c73-0f61-4a7b-a3a2-6e880f6264df)
 
 STRATEGY 4 -  Strided Convolutions(Contracting) + Bilinear UpSampling(Expanding) + Dice Loss
 
