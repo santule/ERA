@@ -1,4 +1,4 @@
-# Building and Training U-NET model
+# Building and Training U-NET model on Oxford Pet dataset
 
 
 In this repo, we build U-Net with 4 different strategies.
