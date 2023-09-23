@@ -20,25 +20,25 @@ VAE(
 Training
 ```
 ****Training****
-Epoch 0: Train loss 743.94482421875
+Epoch 20: Train loss 870.9280395507812
 ****Training****
-Epoch 1: Train loss 537.4459228515625
+Epoch 21: Train loss 870.5869140625
 ****Training****
-Epoch 2: Train loss 409.37493896484375
+Epoch 22: Train loss 870.216552734375
 ****Training****
-Epoch 3: Train loss 290.4701232910156
+Epoch 23: Train loss 869.9364013671875
 ****Training****
-Epoch 4: Train loss 183.79696655273438
+Epoch 24: Train loss 869.6248168945312
 ****Training****
-Epoch 5: Train loss 93.75096893310547
+Epoch 25: Train loss 869.3941040039062
 ****Training****
-Epoch 6: Train loss 25.283349990844727
+Epoch 26: Train loss 869.1148071289062
 ****Training****
-Epoch 7: Train loss -18.43797492980957
+Epoch 27: Train loss 868.8385009765625
 ****Training****
-Epoch 8: Train loss -38.52235794067383
+Epoch 28: Train loss 868.6658935546875
 ****Training****
-Epoch 9: Train loss -44.07147979736328
+Epoch 29: Train loss 868.348388671875
 ```
 Plotting Images with incorrect labels.
 
