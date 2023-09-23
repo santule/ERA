@@ -42,5 +42,5 @@ Epoch 29: Train loss 868.348388671875
 ```
 Plotting Images with incorrect labels.
 
-<img width="655" alt="Screenshot 2023-09-23 at 12 07 52 am" src="https://github.com/santule/ERA/assets/20509836/3a8d3b21-cfee-4097-950b-61e5070d3543">
+<img width="496" alt="Screenshot 2023-09-22 at 11 39 44 pm" src="https://github.com/santule/ERA/assets/20509836/87a91808-7f31-4b08-b65e-61da38e7fcc7">
 
