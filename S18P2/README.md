@@ -1,4 +1,4 @@
-# Building and Training Conditional VAE on MNIST dataset
+# Building and Training Conditional VAE on MNIST dataset trained for generating new images using image + incorrect label
 
 
 In this repo, we build CVAE on MNIST dataset.
@@ -14,6 +14,9 @@ VAE(
   (deFC1): Linear(in_features=266, out_features=36864, bias=True)
   (deConv1): ConvTranspose2d(64, 32, kernel_size=(3, 3), stride=(1, 1))
   (deConv2): ConvTranspose2d(32, 1, kernel_size=(3, 3), stride=(1, 1))
+  (chConv1): Conv2d(1, 64, kernel_size=(3, 3), stride=(1, 1))
+  (chout): Linear(in_features=43264, out_features=10, bias=True)
+  (bce_loss): BCELoss()
 )
 ```
 
