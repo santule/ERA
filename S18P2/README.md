@@ -23,28 +23,88 @@ VAE(
 Training
 ```
 ****Training****
-Epoch 20: Train loss 870.9280395507812
+****Validation****
+Epoch 0: Validation loss 1.3629941940307617
 ****Training****
-Epoch 21: Train loss 870.5869140625
+Epoch 0: Train loss 2.1524834632873535
+****Validation****
+Epoch 1: Validation loss 1.3311786651611328
 ****Training****
-Epoch 22: Train loss 870.216552734375
+Epoch 1: Train loss 1.3482739925384521
+****Validation****
+Epoch 2: Validation loss 1.2945215702056885
 ****Training****
-Epoch 23: Train loss 869.9364013671875
+Epoch 2: Train loss 1.2846781015396118
+****Validation****
+Epoch 3: Validation loss 1.264923334121704
 ****Training****
-Epoch 24: Train loss 869.6248168945312
+Epoch 3: Train loss 1.2440893650054932
+****Validation****
+Epoch 4: Validation loss 1.2440366744995117
 ****Training****
-Epoch 25: Train loss 869.3941040039062
+Epoch 4: Train loss 1.2207486629486084
+****Validation****
+Epoch 5: Validation loss 1.1783515214920044
 ****Training****
-Epoch 26: Train loss 869.1148071289062
+Epoch 5: Train loss 1.1661055088043213
+****Validation****
+Epoch 6: Validation loss 1.148390293121338
 ****Training****
-Epoch 27: Train loss 868.8385009765625
+Epoch 6: Train loss 1.1287875175476074
+****Validation****
+Epoch 7: Validation loss 1.1226953268051147
 ****Training****
-Epoch 28: Train loss 868.6658935546875
+Epoch 7: Train loss 1.0994470119476318
+****Validation****
+Epoch 8: Validation loss 1.1502413749694824
 ****Training****
-Epoch 29: Train loss 868.348388671875
+Epoch 8: Train loss 1.0763802528381348
+****Validation****
+Epoch 9: Validation loss 1.1147665977478027
+****Training****
+Epoch 9: Train loss 1.0576246976852417
+****Validation****
+Epoch 10: Validation loss 1.1046535968780518
+****Training****
+Epoch 10: Train loss 1.0429153442382812
+****Validation****
+Epoch 11: Validation loss 1.1034306287765503
+****Training****
+Epoch 11: Train loss 1.0285704135894775
+****Validation****
+Epoch 12: Validation loss 1.0828297138214111
+****Training****
+Epoch 12: Train loss 1.0215729475021362
+****Validation****
+Epoch 13: Validation loss 1.078284502029419
+****Training****
+Epoch 13: Train loss 1.0082311630249023
+****Validation****
+Epoch 14: Validation loss 1.0806478261947632
+****Training****
+Epoch 14: Train loss 1.0038723945617676
+****Validation****
+Epoch 15: Validation loss 1.0692613124847412
+****Training****
+Epoch 15: Train loss 0.9944864511489868
+****Validation****
+Epoch 16: Validation loss 1.0644495487213135
+****Training****
+Epoch 16: Train loss 0.9856837391853333
+****Validation****
+Epoch 17: Validation loss 1.070383906364441
+****Training****
+Epoch 17: Train loss 0.9819890856742859
+****Validation****
+Epoch 18: Validation loss 1.0578793287277222
+****Training****
+Epoch 18: Train loss 0.977859377861023
+****Validation****
+Epoch 19: Validation loss 1.0653613805770874
+****Training****
+Epoch 19: Train loss 0.9749959707260132
 ```
 Plotting Images with incorrect labels.
 
-![Screenshot 2023-09-23 at 9 47 47 pm](https://github.com/santule/ERA/assets/20509836/dd367370-633d-4c04-a85b-25818d181cf1)
-
+<img width="648" alt="Screenshot 2023-09-25 at 11 42 36 pm" src="https://github.com/santule/ERA/assets/20509836/21ff59c0-f9a9-4c58-923e-dc883e371e85">
 
