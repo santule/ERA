@@ -48,8 +48,9 @@ with gr.Blocks() as demo:
       image_embeddings_n = F.normalize(movie_poster_embeddings, p=2,  dim=-1)
       text_embeddings_n  = F.normalize(text_embeddings,  p=2,  dim=-1)
       dot_similarity = text_embeddings_n @ image_embeddings_n.T
-      values, indices = torch.topk(dot_similarity.squeeze(0), 4)
+      values, indices = torch.topk(dot_similarity.squeeze(0), 10)
 
+      indices = np.random.choice(indices.to('cpu'),4,replace=False)
       matches = [poster_url[idx] for idx in indices]
       matches_genre = [genre[idx] for idx in indices]
 
@@ -78,7 +79,7 @@ with gr.Blocks() as demo:
 
         gallery = gr.Gallery(
             label="Movies", show_label=False, elem_id="gallery"
-        , columns=[2], rows=[2], object_fit="contain", height="auto")
+        , columns=[4], rows=[1], object_fit="contain", height="auto")
 
     btn.click(movie_recommend, text, gallery)
 
