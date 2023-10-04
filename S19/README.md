@@ -3,7 +3,7 @@
 ## Motivation:
 Suggest movies based on user prompts. Currently it supports prompts based on genre.
 
-![Screenshot 2023-10-04 at 11 16 16 pm](https://github.com/santule/ERA/assets/20509836/8a3d0e4a-1071-4680-b293-745de0b5dd55)
+![Screenshot 2023-10-04 at 11 52 13 pm](https://github.com/santule/ERA/assets/20509836/af5e40da-f479-42d7-9480-3eabd15dd938)
 
 
 ## Model details:
