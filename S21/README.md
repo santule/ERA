@@ -2,7 +2,9 @@
 
 ## Key Features:
   1. Trained on tiny shakespeare.
-  2. Training Loss 1.67.
+  2. Training Loss 1.55. Validation Loss 1.73.
+  3. Embedding Dimension: 128.
+  4. Context Length: 32
 
 ## Hugging Face Model Link:
 
