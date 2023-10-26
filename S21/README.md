@@ -7,6 +7,11 @@
   4. Context Length: 32
 
 ## Hugging Face Model Link:
+https://huggingface.co/sanjanatule/gpt-shakespeare/tree/main
+
+```
+sanjanatule/gpt-shakespeare
+```
 
 ## Hugging Face Spaces Link:
 
