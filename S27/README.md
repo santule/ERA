@@ -6,7 +6,7 @@
 2. 4-bit quantization using QLORA.
 3. Number of steps 700.
 4. Trained on open assistant dataset. https://huggingface.co/datasets/OpenAssistant/oasst1
-5. Loss on training dataset 1.4.
+5. Loss on training dataset 1.51.
 
 ## Hugging Face Spaces app:
 
