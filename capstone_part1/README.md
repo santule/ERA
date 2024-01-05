@@ -7,7 +7,7 @@
 
 
 ## Training logs:
-'''
+
 iter 0 step 1: loss 11.1288, LR: 0.000000, iter time: 2820.98ms (optimizer.step) 
 iter 10 step 11: loss 6.6115, LR: 0.000030, iter time: 2432.98ms (optimizer.step) 
 iter 20 step 21: loss 4.9748, LR: 0.000060, iter time: 2433.09ms (optimizer.step) 
@@ -29,6 +29,6 @@ iter 170 step 171: loss 4.3482, LR: 0.000510, iter time: 2440.68ms (optimizer.st
 iter 180 step 181: loss 4.6043, LR: 0.000540, iter time: 2441.63ms (optimizer.step) 
 iter 190 step 191: loss 3.1436, LR: 0.000570, iter time: 2440.67ms (optimizer.step) 
 iter 200 step 201: loss 4.0853, LR: 0.000600, iter time: 2443.81ms (optimizer.step) 
-'''
+
 
    
