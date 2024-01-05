@@ -4,6 +4,8 @@
 ## Features:
 1. Trained on 4 A100 80 GB GPU Ram.
 2. Loss reduced from 11 to 4.
+3. Used 100 MB zipped clean data - wikipedia, archive and book. Sample from https://github.com/togethercomputer/RedPajama-Data
+   
 
 
 ## Training logs:
