@@ -2,9 +2,10 @@
 # Training Microsoft Phi2 GPT model from scratch
 
 ## Features:
-1. Trained on 4 A100 80 GB GPU Ram.
-2. Loss reduced from 11 to 4.
-3. Used 100 MB zipped clean data - wikipedia, archive and book. Sample from https://github.com/togethercomputer/RedPajama-Data
+1. Phi2 Model - https://huggingface.co/microsoft/phi-2
+2. Trained on 4 A100 80 GB GPU Ram.
+3. Loss reduced from 11 to 4.
+4. Used 100 MB zipped clean data - wikipedia, archive and book. Sample from https://github.com/togethercomputer/RedPajama-Data
    
 
 
