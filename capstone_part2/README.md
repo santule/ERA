@@ -1,10 +1,17 @@
+## Multimodal GPT training
+
+### STEP 1 - PRETRAIN FOR IMAGE - LANGUAGE CAPTIONS
+
+1. Dataset : Coco 2017 train dataset (URL:: http://images.cocodataset.org/annotations/annotations_trainval2017.zip)
+2. CLIP Model: clip-vit-base-patch32 (URL:: https://huggingface.co/openai/clip-vit-base-patch32)
+3. LLM Model: Phi2 model ((URL:: https://huggingface.co/microsoft/phi-2)
+4. 48 GB RAM with batch size 2
 
 
-## STEP 1 - PRETRAIN FOR IMAGE - LANGUAGE CAPTIONS
-1. Dataset : CC3M dataset https://huggingface.co/datasets/liuhaotian/LLaVA-CC3M-Pretrain-595K
-2. CLIP Model: 
-3. LLM Model: Phi2 model
+### TRAIN LOSS
+![step1_pretraining_train_loss](https://github.com/santule/ERA/assets/20509836/ae8feb28-6ae8-44ba-9aa7-4732be97b3bf)
 
+### EXAMPLE PREDICTIONS FROM THE MODEL
 ```
 STEP 4000 (BATCH SIZE 2)
 0 - Target captions:
