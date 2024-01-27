@@ -3,6 +3,7 @@
 
 <img width="1024" alt="Screenshot 2024-01-27 at 10 17 49 pm" src="https://github.com/santule/ERA/assets/20509836/a32351e8-5c76-4c78-b607-65e333424653">
 
+Hugging Face Space - https://huggingface.co/spaces/sanjanatule/mmgpt
 
 #### STEP 1 - PRETRAIN FOR IMAGE - LANGUAGE CAPTIONS
 
