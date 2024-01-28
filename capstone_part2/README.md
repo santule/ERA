@@ -14,7 +14,7 @@ Hugging Face Space - https://huggingface.co/spaces/sanjanatule/mmgpt
 
 
 #### Train loss
-![step1_pretraining_train_loss](https://github.com/santule/ERA/assets/20509836/ae8feb28-6ae8-44ba-9aa7-4732be97b3bf)
+![step1_multi_train_loss](https://github.com/santule/ERA/assets/20509836/2c4ee048-1148-43aa-8508-b01417c3539a)
 
 #### Example predictions 
 ```
@@ -45,7 +45,7 @@ STEP 4000 (BATCH SIZE 2)
 
 
 #### Train loss
-![W B Chart 27_01_2024, 23_05_51](https://github.com/santule/ERA/assets/20509836/813853d6-5424-4d5f-8f7f-c25a7c496f7b)
+![step2_multiple_train_loss](https://github.com/santule/ERA/assets/20509836/0f5c1ca8-5287-4855-baf5-b29cd06801e1)
 
 #### Example predictions
 ```
