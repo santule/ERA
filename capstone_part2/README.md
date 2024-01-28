@@ -17,6 +17,8 @@ Text / Audio / Image
 
 
 #### Train loss
+Multiple loss curves as the training failed due to some error. So training was resumed from the last checkpoint.
+
 ![step1_multi_train_loss](https://github.com/santule/ERA/assets/20509836/2c4ee048-1148-43aa-8508-b01417c3539a)
 
 #### Example predictions 
@@ -48,6 +50,8 @@ STEP 4000 (BATCH SIZE 2)
 
 
 #### Train loss
+Multiple loss curves as the training failed due to some error. So training was resumed from the last checkpoint.
+
 ![step2_multiple_train_loss](https://github.com/santule/ERA/assets/20509836/0f5c1ca8-5287-4855-baf5-b29cd06801e1)
 
 #### Example predictions
