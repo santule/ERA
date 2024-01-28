@@ -1,6 +1,6 @@
 ## Multimodal GPT training
 
-
+Mulitmodal GPT training using CLIP and Phi2 models. Phi2 model finetuned using QLORA.
 ![Screenshot 2024-01-28 at 11 56 24 am](https://github.com/santule/ERA/assets/20509836/abc91bf3-c246-4992-9949-83df24ae196d)
 
 Hugging Face Space - https://huggingface.co/spaces/sanjanatule/mmgpt
@@ -58,3 +58,7 @@ Answer:   Yes, one of the street signs presents an arrow pointing to the left.
 Model Predicted Ans: ['The street sign reads "No Left Turn" in English.\n\nThe street sign reads "No Left Turn" in English.\n\nThe street sign reads "No Left Turn" in English.\n\nThe street sign reads "No Left Turn" in English.\n\nThe street sign reads "No Left Turn" in English.\n\nThe street sign reads "No Left Turn" in English.\n\nThe street sign reads "No Left Turn" in English.\n\nThe street']
 ```
 
+#### Future Improvements
+1. Train longer for step 1 and step 2.
+2. Better quality input data ( [example 558 ](https://huggingface.co/datasets/liuhaotian/LLaVA-Pretrain)https://huggingface.co/datasets/liuhaotian/LLaVA-Pretrain)
+3. One cycle policy for learning rate for step 1.
