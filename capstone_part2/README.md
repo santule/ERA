@@ -1,7 +1,7 @@
 ## Multimodal GPT training
 
 Mulitmodal GPT training using CLIP and Phi2 models. Phi2 model finetuned using QLORA.
-![Screenshot 2024-01-28 at 11 56 24 am](https://github.com/santule/ERA/assets/20509836/abc91bf3-c246-4992-9949-83df24ae196d)
+![Screenshot 2024-01-30 at 6 59 10 pm](https://github.com/santule/ERA/assets/20509836/5e9c42be-77d0-4439-8e6d-c92023f9787b)
 
 Hugging Face Space - https://huggingface.co/spaces/sanjanatule/mmgpt
 
