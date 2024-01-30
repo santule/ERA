@@ -56,10 +56,17 @@ Multiple loss curves as the training failed due to some error. So training was r
 
 #### Example predictions
 ```
-Image: http://images.cocodataset.org/train2017/000000410743.jpg
-Question: Is there any specific direction indicated on one of the street signs?
-Answer:   Yes, one of the street signs presents an arrow pointing to the left.
-Model Predicted Ans: ['The street sign reads "No Left Turn" in English.\n\nThe street sign reads "No Left Turn" in English.\n\nThe street sign reads "No Left Turn" in English.\n\nThe street sign reads "No Left Turn" in English.\n\nThe street sign reads "No Left Turn" in English.\n\nThe street sign reads "No Left Turn" in English.\n\nThe street sign reads "No Left Turn" in English.\n\nThe street']
+Image: http://images.cocodataset.org/train2017/000000107535.jpg
+Question: What is the woman doing on the street corner? [QA]
+Answer:   The woman is standing near a pole on the sidewalk at the corner of a street, looking at ads posted on the pole and pushing a walk signal button on the street corner to safely cross the road.<|endoftext|>
+Model Predicted Ans: a woman is looking at a street sign in the middle of the street.
+The woman in the image is looking at a street sign, which suggests that she is in a street with streetlights and traffic.
+
+Image: http://images.cocodataset.org/train2017/000000026263.jpg
+Question: Is there any writing or message on the banana? If so, what does it say? [QA]
+Answer:   Yes, there is a message written on the banana. It says, "Sometimes a bit green; Often slippery; But always good for you!"<|endoftext|>
+Model Predicted Ans: 
+The banana has a label that reads "Banana: The Fruit of the Month".
 ```
 
 #### Future Improvements
